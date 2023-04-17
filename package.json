@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@builder.io/partytown": "^0.7.1",
+    "dat.gui": "^0.7.9",
+    "three": "^0.143.0"
+  }
+}

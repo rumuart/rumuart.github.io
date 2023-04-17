@@ -1,0 +1,217 @@
+
+
+.slider {
+    width: 100%;
+    margin: 0;
+    transition: all ease-in-out 0.3s;
+    height: 450px;
+
+    margin-bottom: 30px;
+  }
+
+  .slick-slide {
+    height: 400px;
+  }
+
+  .slick-slide img {
+    transform: scale(0.95);
+    transition: 0.1s linear;
+  }
+
+  .slick-slide img:hover {
+    transform: scale(1);
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  .slick-slide:hover {
+    opacity: 1;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: white;
+  }
+
+  .slick-slide {
+    transition: all ease-in-out 0.3s;
+    opacity: 0.07;
+  }
+
+  .slick-active {
+    opacity: 0.25;
+  }
+
+  .slick-current {
+    transition: all ease-in-out 0.3s;
+    opacity: 1;
+  }
+
+  .slick-current img {
+    outline: 1px solid rgb(150, 150, 150);
+    outline-offset: -1px;
+    transform: scale(1);
+    
+  }
+  .slick-current .dummy {
+    display: block;
+  }
+
+  .container {
+    margin-top: 100px;
+    position: relative;
+    width: 90%;
+    height: 0px;
+    left: 5%;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+  }
+  .container .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+  }
+  .container .image-container .image {
+    overflow: 0;
+
+    height: 300px;
+    cursor: pointer;
+  }
+
+  .container .image-container .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.2s, outline 0.05s;
+  }
+
+  .container .image-container .image:hover img {
+    transform: scale(1.02);
+    outline: 1px solid rgb(150, 150, 150);
+    outline-offset: 0px;
+    box-shadow: 0px 0px 30px 5px black;
+  }
+
+   .popup-image {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.85);
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    display: none;
+    backdrop-filter: blur(5px);
+  }
+
+  #close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  #full {
+    position: absolute;
+    top: 19px;
+    right: 50px;
+
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+   .popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    width: fit-content;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0px 0px 40px 10px rgb(20, 20, 20);
+  }
+  #extend {
+    position: absolute;
+    top: 599px;
+    left: 50%;
+    transform: translateX(-5px);
+    font-size: 20px;
+    color: white;
+    z-index: 1000;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  #extend:hover {
+    opacity: 1;
+  }
+  .slide {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 1000;
+  }
+  .dummy {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    top: 0px;
+
+    display: none;
+  }
+  .dummy:hover {
+    outline: 1px solid white;
+    outline-offset: -1px;
+    cursor: pointer;
+  }
+  #expand {
+    width: 120px;
+    height: 2px;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-60px);
+    display: block;
+    z-index: 1000;
+    opacity: 0.7;
+    text-align: center;
+    border: none;
+    
+  }
+  #expand:hover {
+    opacity: 1;
+  }
+  #exp {
+    position: absolute;
+    width: 100%;
+    font-size: 11px;
+    border: none;
+    color: white;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-60px);
+  }
+  #arrow {
+    position: absolute;
+    font-size: 20px;
+    border: none;
+    color: white;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-6px);
+    display: none;
+  }
