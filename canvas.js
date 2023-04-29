@@ -36,7 +36,7 @@ let cCords = [];
 const canvas = document.getElementById('anim');
 const window2 = document.getElementById('window2');
 
-var fpsIcon = document.getElementById("fpsCounter");
+
 
 /*spriteSun*/
 const menuTiles = new THREE.TextureLoader().load( 'textures/menuTiles.png' );
@@ -1579,11 +1579,11 @@ composer.addPass(SSAO);*/
 function animate() {
 
   
-  //deltaTime = (new Date().getTime() - lastFrameTimeStamp)/10;
+  
 
   deltaTime = ((thisFrameTimeStamp = new Date()) - lastFrameTimeStamp)/10;
 
-  fpsIcon.innerText = deltaTime ;
+  
 
   
 
