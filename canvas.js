@@ -1,13 +1,27 @@
 
 import { FlakesTexture } from "./FlakesTexture.js";
 
+import Stats from './Stats.js';
 
 
 
 $(window).on("load", function () {
 
-  
+var stats = new Stats();
+document.body.appendChild(stats.dom)
 
+let thisFrameTimeStamp;
+ 
+let lastFrameTimeStamp  = new Date();
+
+let deltaTime = null;
+
+let rippleLast =
+{
+  x: 0,
+  y: 0,
+
+};
 
   const scene = new THREE.Scene();
       scene.background;
@@ -21,6 +35,8 @@ let cCords = [];
 
 const canvas = document.getElementById('anim');
 const window2 = document.getElementById('window2');
+
+var fpsIcon = document.getElementById("fpsCounter");
 
 /*spriteSun*/
 const menuTiles = new THREE.TextureLoader().load( 'textures/menuTiles.png' );
@@ -470,16 +486,7 @@ for(let i = 5; i < circles.length; i++){
 
 }
 
-let lastFrameTimeStamp = new Date().getTime();
- 
-let deltaTime = null;
 
-let rippleLast =
-{
-  x: 0,
-  y: 0,
-
-};
 
 
 
@@ -1572,7 +1579,11 @@ composer.addPass(SSAO);*/
 function animate() {
 
   
-  deltaTime = (new Date().getTime() - lastFrameTimeStamp)/10;
+  //deltaTime = (new Date().getTime() - lastFrameTimeStamp)/10;
+
+  deltaTime = ((thisFrameTimeStamp = new Date()) - lastFrameTimeStamp)/10;
+
+  fpsIcon.innerText = deltaTime ;
 
   
 
@@ -1723,8 +1734,9 @@ lightSpheres.forEach(swarl => {
 
   
   
-  lastFrameTimeStamp = new Date().getTime();
-  
+  lastFrameTimeStamp = thisFrameTimeStamp;
+   
+  stats.update();
   
 }
 
